@@ -25,7 +25,7 @@ import org.springframework.transaction.annotation.TransactionManagementConfigure
 @Configuration
 @EnableTransactionManagement
 @ComponentScan({ "blog.panditmandar.code.mvcapp.config" })
-@PropertySource(value = { "classpath:application.properties" })
+@PropertySource(value = { "classpath:/conf/application.properties" })
 public class HibernateConfig implements TransactionManagementConfigurer {
 
 	@Autowired
