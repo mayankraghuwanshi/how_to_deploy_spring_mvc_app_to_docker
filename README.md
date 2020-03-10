@@ -112,7 +112,7 @@ $ docker run -p8080:8080 IMAGE_ID
 
 7. **BOOM The app is up running on port [8080](http://localhost:8080/) go and check it.**
 
-#SCREEN SHOTS-
+# SCREEN SHOTS-
 
 ![picture](src/main/resources/screenShots/Screenshot%20(60).png)
 ![picture](src/main/resources/screenShots/Screenshot%20(61).png)
