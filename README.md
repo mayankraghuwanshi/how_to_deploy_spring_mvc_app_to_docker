@@ -1,4 +1,4 @@
-# How to deploy spring-MVC project on Docker.
+# How to deploy spring-MVC app on Docker.
 This repository contains a basic implementation of CRUD application in spring-mvc, Hibernate and mysql along with a Docker file to build a Docker image out of it.
 
 *To follow up with the steps, you must have all the softwares and tools installed in your matchine.*
@@ -21,12 +21,12 @@ Once you have all the above software setup then follow the below steps to deploy
 
 1. **clone this repository.**
 ```
-$ git clone https://github.com/mayankraghuwanshi/how_to_deploy_spring_mvc_project_on_docker.git
+$ git clone https://github.com/mayankraghuwanshi/how_to_deploy_spring_mvc_app_to_docker.git
 ```
 
 2. **Move to this newly created directory and install all the dependencies using mvn command.**
 ```
-$ cd /how_to_deploy_spring_mvc_project_on_docker
+$ cd /how_to_deploy_spring_mvc_app_to_docker
 $ mvn clean install
 ```
 3. **Now we will create a database named schooldb and a table named students with id, first_name, last_name, grade as attributes.**
