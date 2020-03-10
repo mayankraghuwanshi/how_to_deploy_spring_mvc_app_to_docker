@@ -1,43 +1,52 @@
-# Spring MVC CRUD Application with MySQL and Hibernate
-Best Of Hello World: [Spring MVC CRUD App]
+# How to deploy spring-MVC project on Docker.
+This repository contains a basic implementation of CRUD application in spring-mvc, Hibernate and mysql along with a Docker file to build a Docker image out of it.
 
-## Say Hello
-This is a very simple and basic introductory program to start with Spring MVC CRUD Application with MySQL and Hibernate. This project gives an idea about how to create Spring MVC Full Application having Model, Controller and View binded together to perform CRUD operations with Database connection using DAO Classes and Hibernate.
+*To follow up with the steps, you must have all the softwares and tools installed in your matchine.*
 
-## Getting Started
 
-This sample code is fully executable on its own based on the prerequisites are set up properly.
+## Prerequisits
+You are required to have these tools before you start with using the source code
+- [JDK 1.8](https://www.oracle.com/java/technologies/javase-downloads.html)
+- [MAVEN](https://maven.apache.org/download.cgi)
+- [MYSQL](https://docs.oracle.com/cd/E19078-01/mysql/mysql-workbench/wb-installing.html)
+- [DOCKER](https://hub.docker.com/editions/community/docker-ce-desktop-windows/)
+- [GIT](https://git-scm.com/downloads)
+- IDE (Recommended Intelij Idea)
 
-### Prerequisites
+**If you are running Windows 10 Home Basics then follow up [this](https://medium.com/@mbyfieldcameron/docker-on-windows-10-home-edition-c186c538dff3) to install DOCKER.**
 
-You are required to have few tools before you start with using the source code.
-- JDK 1.8
-- Maven
-- IDE (Recommended - Spring Tool Suite)
-- My SQL 5.6
-- Git
+### Setup code base.
 
-Install JDK, Maven and Git as first step, before you get the the code base setup.
+Once you have all these software setup then follow the below steps to deploy your first app to Docker.
 
-### Setup Code Base
-
-Use below URL to Clone Source Code
-
-```sh
-git clone https://github.com/get2mandar/springmvc-crud-app.git
+1. clone this repository.
+```
+$ git clone https://github.com/mayankraghuwanshi/how_to_deploy_spring_mvc_project_on_docker.git
 ```
 
-Build a Project using Maven by Command Line.<br>
-Change Directory to Downloaded Project Directory and execute below Maven Command.
+2. Move to this newly created directory and install all the dependencies using mvn command.
+```
+$ cd /how_to_deploy_spring_mvc_project_on_docker
+$ mvn clean install
+```
+3. Now we will create a database called schooldb and make a table called students with id, first_name, last_name, grade as attributes.
 
-```sh
-mvn clean install
+```
+$ mysql -u root -p
+$ password *******
+$ mysql> CREATE DATABASE schooldb;
+$ mysql> USE DATABASE schooldb;
+$ mysql> CREATE TABLE students(
+       > id INT PRIMARY KEY AUTO_INCREMENT,
+       > first_name VARCHAR(13),
+       > last_name  VARCHAR(13),
+       > grade INT);
 ```
 
+4. Now its time to create Docker file and perform following steps.
+- install apache tomcat
+- copy SpringMVCCRUDApp.war to webapp directory inside tomcat.
+- create directory and copy resource files there in Docker.
+- copy context.xml file to tomcat directory to provide connection to jdbc:mysql:localhost
 
-## Run
 
-You will require a Tomcat or JBOSS some web server to run this web application. Run with any web server and view the output on a browser.
-
-
-[Spring MVC CRUD App]: <https://panditmandar.blog/2019/04/15/spring-mvc-crud-app/>
