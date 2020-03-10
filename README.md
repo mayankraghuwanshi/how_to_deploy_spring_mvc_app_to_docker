@@ -11,7 +11,7 @@ You are required to have these tools before you start with using the source code
 - [MYSQL](https://docs.oracle.com/cd/E19078-01/mysql/mysql-workbench/wb-installing.html)
 - [DOCKER](https://hub.docker.com/editions/community/docker-ce-desktop-windows/)
 - [GIT](https://git-scm.com/downloads)
-- IDE (Recommended Intellij Idea)
+- [IDE (Recommended Intellij Idea)](https://www.jetbrains.com/idea/download/)
 
 **If you are running Windows 10 Home Basics then follow up [this](https://medium.com/@mbyfieldcameron/docker-on-windows-10-home-edition-c186c538dff3) to install DOCKER.**
 
