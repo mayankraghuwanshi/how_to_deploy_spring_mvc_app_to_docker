@@ -19,17 +19,17 @@ You are required to have these tools before you start with using the source code
 
 Once you have all the above software setup then follow the below steps to deploy your first application to Docker.
 
-1. clone this repository.
+1. **clone this repository.**
 ```
 $ git clone https://github.com/mayankraghuwanshi/how_to_deploy_spring_mvc_project_on_docker.git
 ```
 
-2. Move to this newly created directory and install all the dependencies using mvn command.
+2. **Move to this newly created directory and install all the dependencies using mvn command.**
 ```
 $ cd /how_to_deploy_spring_mvc_project_on_docker
 $ mvn clean install
 ```
-3. Now we will create a database named schooldb and a table named students with id, first_name, last_name, grade as attributes.
+3. **Now we will create a database named schooldb and a table named students with id, first_name, last_name, grade as attributes.**
 
 ```
 $ mysql -u root -p
@@ -47,7 +47,7 @@ CREATE TABLE students
 );
 ```
 
-4. Now its time to create Docker file and perform the following steps.
+4. **Now its time to create Docker file and perform the following steps.**
 - install apache tomcat inside Docker
 ```dockerfile
 FROM tomcat:8.0.51-jre8-alpine
@@ -93,7 +93,7 @@ COPY ./context.xml /usr/local/tomcat/conf/
 
 CMD ["catalina.sh","run"]
 ```
-5. We have successfully written Docker file now Build it to make an image out of it
+5. **We have successfully written Docker file now Build it to make an image out of it**
 ```dockerfile
 $ docker build -t NAME .
 ```
@@ -105,12 +105,12 @@ $ docker images
 |--------------|--------|------------|--------------|-------|
 |NAME | latest | IMAGE_ID | 12 hours ago | 122 MB|
 
-6. Copy the Image id and run the following command to map Docker port 8080 to windows port 8080
+6. **Copy the Image id and run the following command to map Docker port 8080 to windows port 8080**
 ```
 $ docker run -p8080:8080 IMAGE_ID
 ```
 
-7. BOOM The app is up running on port [8080](http://localhost:8080/) go and check it.
+7. **BOOM The app is up running on port [8080](http://localhost:8080/) go and check it.**
 
 #SCREEN SHOTS-
 
